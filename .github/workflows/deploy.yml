@@ -22,4 +22,4 @@ jobs:
             sudo git clone https://github.com/WillD5/Introductory-Website-2.git
             cd Introductory-Website-2
             sudo npm i
-            pm2 start ecosystem.config.js --only website
+            pm2 start ../ecosystem.config.js --only website
