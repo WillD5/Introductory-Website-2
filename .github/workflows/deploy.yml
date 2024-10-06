@@ -17,7 +17,7 @@ jobs:
 
           script: |
             pm2 delete website
-            sudo rm -rf Introductory-Website
+            sudo rm -rf Introductory-Website-2
             sudo apt-get update -y
             sudo git clone https://github.com/WillD5/Introductory-Website-2.git
             cd Introductory-Website-2
