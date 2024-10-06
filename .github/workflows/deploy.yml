@@ -1,0 +1,25 @@
+name: deploy
+run-name: ${{ github.actor}} committed
+on:
+  push:
+    branches: [main, deploy]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run SSH Commands
+        uses: appleboy/ssh-action@v0.1.2
+
+        with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{ secrets.SSH_USERNAME}}
+
+          script: |
+            pm2 delete website
+            sudo rm -rf Introductory-Website
+            sudo apt-get update -y
+            sudo git clone https://github.com/WillD5/Introductory-Website-2.git
+            cd Introductory-Website-2
+            sudo npm i
+            pm2 start --name website
