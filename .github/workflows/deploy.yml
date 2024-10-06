@@ -16,10 +16,10 @@ jobs:
           username: ${{ secrets.SSH_USERNAME}}
 
           script: |
-            pm2 delete website
-            sudo rm -rf Introductory-Website
+            pm2 delete website || true
+            sudo rm -rf Introductory-Website-2
             sudo apt-get update -y
             sudo git clone https://github.com/WillD5/Introductory-Website-2.git
             cd Introductory-Website-2
             sudo npm i
-            pm2 start --name website
+            pm2 start ecosystem.config.js --only website
