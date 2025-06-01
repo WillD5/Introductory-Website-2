@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+.body {
+    min-height: 50vh;
+}
+
+.footer {
+    background-color: #282c34;
+    height: 10vh;
+}
+
+.link-item {
+    list-style-type: none;
+    padding-bottom: 1.5%;
+}
+
+.list {
+    position: relative;
+    right: 1%;
+}
+
+.paragraph {
+    max-width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
